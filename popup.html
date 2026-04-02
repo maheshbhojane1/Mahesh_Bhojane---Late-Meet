@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=400">
+  <title>AI Meeting Copilot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Setup View (shown when no API key) -->
+  <div id="setup-view" class="view" style="display: none;">
+    <div class="setup-container">
+      <div class="setup-logo">🧠</div>
+      <h1 class="setup-title">AI Meeting Copilot</h1>
+      <p class="setup-subtitle">Real-time meeting intelligence</p>
+      
+      <div class="setup-form">
+        <label class="setup-label">OpenAI API Key</label>
+        <div class="input-group">
+          <input type="password" id="api-key-input" placeholder="sk-..." class="setup-input">
+          <button id="toggle-key" class="toggle-btn">👁️</button>
+        </div>
+        
+        <label class="setup-label" style="margin-top: 12px;">Supabase URL <span class="optional">(for late-joiner relay)</span></label>
+        <input type="text" id="supabase-url-input" placeholder="https://your-project.supabase.co" class="setup-input">
+        
+        <label class="setup-label">Supabase Anon Key</label>
+        <input type="text" id="supabase-key-input" placeholder="eyJ..." class="setup-input">
+        
+        <button id="save-keys" class="setup-btn">
+          <span class="btn-text">Activate Copilot</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main View -->
+  <div id="main-view" class="view">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <div class="logo-icon">🧠</div>
+        <div class="header-text">
+          <div class="header-title">Meeting Copilot</div>
+          <div id="status-badge" class="status-badge inactive">
+            <span class="status-dot"></span>
+            <span class="status-text">No active meeting</span>
+          </div>
+        </div>
+      </div>
+      <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+    </div>
+
+    <!-- Meeting Active Section -->
+    <div id="meeting-section" style="display: none;">
+      <!-- Duration -->
+      <div class="duration-bar">
+        <div class="duration-icon">⏱️</div>
+        <div id="meeting-duration" class="duration-text">00:00:00</div>
+        <div id="meeting-id" class="meeting-id-badge">—</div>
+      </div>
+
+      <!-- Quick Summary -->
+      <div class="card summary-card">
+        <div class="card-header">
+          <span class="card-icon">📝</span>
+          <span class="card-title">Live Summary</span>
+          <span class="live-badge">LIVE</span>
+        </div>
+        <div id="summary-text" class="card-body">
+          Waiting for conversation...
+        </div>
+      </div>
+
+      <!-- Current Topic -->
+      <div class="card topic-card">
+        <div class="card-header">
+          <span class="card-icon">🎯</span>
+          <span class="card-title">Current Topic</span>
+        </div>
+        <div id="current-topic" class="topic-highlight">
+          Detecting...
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-icon">👥</div>
+          <div id="participant-count" class="stat-value">0</div>
+          <div class="stat-label">Participants</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">✅</div>
+          <div id="decision-count" class="stat-value">0</div>
+          <div class="stat-label">Decisions</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">📋</div>
+          <div id="action-count" class="stat-value">0</div>
+          <div class="stat-label">Actions</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">😊</div>
+          <div id="sentiment-icon" class="stat-value">—</div>
+          <div class="stat-label">Mood</div>
+        </div>
+      </div>
+
+      <!-- Recent Topics -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">📌</span>
+          <span class="card-title">Topics</span>
+        </div>
+        <div id="topics-list" class="topics-list">
+          <div class="empty-state">No topics detected yet</div>
+        </div>
+      </div>
+
+      <!-- Late Joiners -->
+      <div id="late-joiners-section" class="card" style="display: none;">
+        <div class="card-header">
+          <span class="card-icon">🚪</span>
+          <span class="card-title">Late Joiners</span>
+        </div>
+        <div id="late-joiners-list" class="late-joiners-list"></div>
+      </div>
+
+      <!-- Open Dashboard -->
+      <button id="open-dashboard" class="dashboard-btn">
+        <span>Open Full Dashboard</span>
+        <span class="btn-arrow">↗</span>
+      </button>
+    </div>
+
+    <!-- No Meeting Section -->
+    <div id="no-meeting-section">
+      <div class="empty-meeting">
+        <div class="empty-icon">📹</div>
+        <div class="empty-title">No Active Meeting</div>
+        <div class="empty-text">Join a Google Meet to activate AI Copilot</div>
+        <div class="supported-platforms">
+          <span class="platform-tag active">Google Meet</span>
+          <span class="platform-tag">Zoom (coming soon)</span>
+          <span class="platform-tag">Teams (coming soon)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
