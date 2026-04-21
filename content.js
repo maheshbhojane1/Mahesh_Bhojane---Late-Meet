@@ -23,6 +23,7 @@
       '[data-participant-id] [aria-label]'
     ]
   };
+  // Defensive cap to ignore malformed/concatenated DOM labels that are not real participant names.
   const MAX_PARTICIPANT_NAME_LEN = 120;
 
   function queryFirst(selectors, root = document) {

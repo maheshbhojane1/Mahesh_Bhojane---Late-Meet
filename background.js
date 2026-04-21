@@ -4,6 +4,11 @@ const OPENAI_CHAT_URL = 'https://api.openai.com/v1/chat/completions';
 const OPENAI_WHISPER_URL = 'https://api.openai.com/v1/audio/transcriptions';
 const OFFSCREEN_DOCUMENT_PATH = 'offscreen.html';
 const OFFSCREEN_DOCUMENT_URL = chrome.runtime.getURL(OFFSCREEN_DOCUMENT_PATH);
+const MAX_PROMPT_LENGTH = 2000;
+const TRANSCRIPT_WINDOW_SIZE = 25;
+const SUMMARIZATION_MAX_TOKENS = 1200;
+const JOINER_MESSAGE_MAX_TOKENS = 120;
+const MIN_MEETING_DURATION_FOR_WELCOME = 60;
 
 const state = {
   isActive: false,
@@ -111,8 +116,8 @@ function sanitizePromptText(value) {
   return String(value || '')
     .replace(/[\u0000-\u001F\u007F]/g, ' ')
     .replace(/```/g, '')
-    .replace(/<\/?script[^>]*>/gi, '')
-    .slice(0, 2000);
+    .replace(/[<>{}]/g, ' ')
+    .slice(0, MAX_PROMPT_LENGTH);
 }
 
 async function ensureOffscreenDocument() {
@@ -183,7 +188,7 @@ async function summarizeTranscriptIfNeeded() {
   if (!apiKey) return;
 
   const transcriptWindow = state.transcript
-    .slice(-25)
+    .slice(-TRANSCRIPT_WINDOW_SIZE)
     .map(e => `${sanitizePromptText(e.speaker)}: ${sanitizePromptText(e.text)}`)
     .join('\n');
   if (!transcriptWindow.trim()) return;
@@ -204,7 +209,7 @@ async function summarizeTranscriptIfNeeded() {
       ],
       temperature: 0.2,
       response_format: { type: 'json_object' },
-      max_tokens: 1200
+      max_tokens: SUMMARIZATION_MAX_TOKENS
     })
   });
 
@@ -275,7 +280,7 @@ async function generateLateJoinerMessage(joinerName) {
         model: 'gpt-4o-mini',
         messages: [{ role: 'user', content: prompt }],
         temperature: 0.5,
-        max_tokens: 120
+        max_tokens: JOINER_MESSAGE_MAX_TOKENS
       })
     });
 
@@ -299,7 +304,7 @@ async function sendChatToTab(tabId, text) {
 }
 
 async function maybeWelcomeJoiners(tabId, joiners) {
-  if (!joiners.length || getDuration() <= 60) return;
+  if (!joiners.length || getDuration() <= MIN_MEETING_DURATION_FOR_WELCOME) return;
 
   for (const joiner of joiners) {
     const name = String(joiner || '').trim();

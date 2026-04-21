@@ -12,15 +12,16 @@ let isDrainingQueue = false;
 const CHUNK_MS = 8000;
 const RMS_THRESHOLD = 0.012;
 const SILENCE_LIMIT = 3;
+const BASE64_CHUNK_SIZE = 0x8000;
 let consecutiveSilent = 0;
+let isFlushInProgress = false;
 
 function toBase64(arrayBuffer) {
   const bytes = new Uint8Array(arrayBuffer);
-  const chunkSize = 0x8000;
   const chunks = [];
 
-  for (let i = 0; i < bytes.length; i += chunkSize) {
-    const slice = bytes.subarray(i, i + chunkSize);
+  for (let i = 0; i < bytes.length; i += BASE64_CHUNK_SIZE) {
+    const slice = bytes.subarray(i, i + BASE64_CHUNK_SIZE);
     let chunk = '';
     for (let j = 0; j < slice.length; j += 1) {
       chunk += String.fromCharCode(slice[j]);
@@ -56,20 +57,25 @@ function getCurrentRms() {
 }
 
 async function flushAudioChunk() {
-  if (isChunkRequested || !mediaRecorder || mediaRecorder.state !== 'recording') return;
+  if (isFlushInProgress || isChunkRequested || !mediaRecorder || mediaRecorder.state !== 'recording') return;
 
-  const rms = getCurrentRms();
-  if (rms < RMS_THRESHOLD) {
-    consecutiveSilent += 1;
-    if (consecutiveSilent >= SILENCE_LIMIT) {
-      return;
+  isFlushInProgress = true;
+  try {
+    const rms = getCurrentRms();
+    if (rms < RMS_THRESHOLD) {
+      consecutiveSilent += 1;
+      if (consecutiveSilent >= SILENCE_LIMIT) {
+        return;
+      }
+    } else {
+      consecutiveSilent = 0;
     }
-  } else {
-    consecutiveSilent = 0;
-  }
 
-  isChunkRequested = true;
-  mediaRecorder.requestData();
+    isChunkRequested = true;
+    mediaRecorder.requestData();
+  } finally {
+    isFlushInProgress = false;
+  }
 }
 
 async function postChunk(blob) {
