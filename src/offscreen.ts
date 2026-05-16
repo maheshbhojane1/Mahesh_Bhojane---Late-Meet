@@ -105,8 +105,9 @@ async function postChunk(blob: Blob) {
   console.log('[LateMeet][offscreen] postChunk called, blob size:', blob?.size || 0);
   if (!isChunkViable(blob)) { console.warn('[LateMeet][offscreen] Chunk too small, skipping:', blob?.size ?? 0, 'bytes'); return; }
 
-  const audioBase64 = await blobToBase64(blob);
-  const mimeType = mediaRecorder?.mimeType || 'audio/webm';
+  const currentRecorder = mediaRecorder;
+const audioBase64 = await blobToBase64(blob);
+const mimeType = currentRecorder?.mimeType || 'audio/webm';
 
   if (!mimeType) {
   console.warn('[LateMeet][offscreen] Missing MIME type');
