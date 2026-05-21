@@ -871,6 +871,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         return;
       }
 
+      case "WAVEFORM_DATA": {
+        if (!message._relayed) {
+          chrome.runtime
+            .sendMessage({ type: "WAVEFORM_DATA", buckets: message.buckets, _relayed: true })
+            .catch(() => {});
+        }
+        sendResponse({ success: true });
+        return;
+      }
+
       case "OFFSCREEN_LOG": {
         // Relay log lines from the offscreen document into the SW console so
         // they are visible without opening the offscreen DevTools separately.

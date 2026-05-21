@@ -4,6 +4,65 @@ import { initTheme } from "./theme.js";
 initTheme();
 
 document.addEventListener("DOMContentLoaded", async () => {
+  // ——— Waveform Visualizer ———
+  const WAVEFORM_N = 32;
+  const WAVEFORM_H = 48;
+  const WAVEFORM_SMOOTH = 0.55;
+
+  const waveformCanvas = document.getElementById("waveform-canvas") as HTMLCanvasElement | null;
+  const waveformStatusEl = document.getElementById("waveform-status");
+  let waveformCtx: CanvasRenderingContext2D | null = null;
+  let waveformCssW = 280;
+  let smoothed = new Array(WAVEFORM_N).fill(0);
+
+  function initWaveformCanvas() {
+    if (!waveformCanvas) return;
+    waveformCtx = waveformCanvas.getContext("2d");
+    const dpr = window.devicePixelRatio || 1;
+    waveformCssW = waveformCanvas.offsetWidth || 280;
+    waveformCanvas.width = Math.round(waveformCssW * dpr);
+    waveformCanvas.height = Math.round(WAVEFORM_H * dpr);
+    if (waveformCtx) waveformCtx.scale(dpr, dpr);
+    drawIdleWaveform();
+  }
+
+  function drawIdleWaveform() {
+    if (!waveformCtx) return;
+    const barGap = 2;
+    const barW = (waveformCssW - barGap * (WAVEFORM_N - 1)) / WAVEFORM_N;
+    const centerY = WAVEFORM_H / 2;
+    waveformCtx.clearRect(0, 0, waveformCssW, WAVEFORM_H);
+    for (let i = 0; i < WAVEFORM_N; i++) {
+      const x = i * (barW + barGap);
+      waveformCtx.fillStyle = "rgba(255,255,255,0.08)";
+      waveformCtx.beginPath();
+      waveformCtx.roundRect(x, centerY - 1, barW, 2, 1);
+      waveformCtx.fill();
+    }
+  }
+
+  function drawWaveform(buckets: number[]) {
+    if (!waveformCtx) return;
+    const barGap = 2;
+    const barW = (waveformCssW - barGap * (WAVEFORM_N - 1)) / WAVEFORM_N;
+    const centerY = WAVEFORM_H / 2;
+    waveformCtx.clearRect(0, 0, waveformCssW, WAVEFORM_H);
+    for (let i = 0; i < WAVEFORM_N; i++) {
+      smoothed[i] = smoothed[i] * WAVEFORM_SMOOTH + buckets[i] * (1 - WAVEFORM_SMOOTH);
+      const amp = smoothed[i];
+      const barH = Math.max(2, amp * WAVEFORM_H * 0.9);
+      const x = i * (barW + barGap);
+      const y = centerY - barH / 2;
+      const alpha = Math.min(1, 0.3 + amp * 2.4);
+      waveformCtx.fillStyle = `rgba(255,255,255,${alpha.toFixed(3)})`;
+      waveformCtx.beginPath();
+      waveformCtx.roundRect(x, y, barW, barH, barW / 2);
+      waveformCtx.fill();
+    }
+  }
+
+  initWaveformCanvas();
+
   // ——— Tab Switching ———
   const tabs = document.querySelectorAll(".dash-tab");
   const panels = document.querySelectorAll(".tab-panel");
@@ -36,12 +95,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (message.type === "STATE_UPDATE") {
       lastState = message.state;
       updateDashboard(message.state);
+      if (!message.state?.audioActive) {
+        smoothed = new Array(WAVEFORM_N).fill(0);
+        drawIdleWaveform();
+        if (waveformStatusEl) {
+          waveformStatusEl.textContent = "IDLE";
+          waveformStatusEl.classList.remove("active");
+        }
+      }
     }
     if (message.type === "SESSION_ENDED") {
       // Reload sessions if on that tab
       const sessionsTab = document.querySelector('[data-tab="sessions"]');
       if (sessionsTab?.classList.contains("active")) {
         loadSavedSessions();
+      }
+    }
+    if (message.type === "WAVEFORM_DATA" && Array.isArray(message.buckets)) {
+      drawWaveform(message.buckets);
+      if (waveformStatusEl && !waveformStatusEl.classList.contains("active")) {
+        waveformStatusEl.textContent = "LIVE";
+        waveformStatusEl.classList.add("active");
       }
     }
   });
@@ -57,6 +131,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       audioBtn.disabled = true;
       audioBtn.textContent = "Starting...";
+
+      // Request mic permission from this user-facing page while the gesture is still live.
+      // Chrome grants the permission to the extension origin so the offscreen doc inherits it.
+      try {
+        const micStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+        micStream.getTracks().forEach((t) => t.stop());
+      } catch {
+        console.warn("[Dashboard] Mic permission not granted — waveform will use tab audio only");
+      }
 
       chrome.tabs.query({ url: "https://meet.google.com/*" }, (meetTabs) => {
         if (meetTabs.length === 0) {

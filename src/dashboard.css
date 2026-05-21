@@ -802,6 +802,35 @@ body::-webkit-scrollbar-thumb,
   border-color: rgba(239, 68, 68, 0.25);
 }
 
+/* ——— Audio Waveform Visualizer ——— */
+.waveform-canvas {
+  display: block;
+  width: 100%;
+  height: 48px;
+  border-radius: 6px;
+}
+
+.waveform-status-badge {
+  font-size: 9px;
+  font-weight: 700;
+  color: #525252;
+  background: #171717;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  border: 1px solid #262626;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.waveform-status-badge.active {
+  color: #000000;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
 /* ——— Live Transcript ——— */
 .transcript-info {
   font-size: 11px;
