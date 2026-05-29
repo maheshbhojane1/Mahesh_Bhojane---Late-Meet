@@ -1144,6 +1144,7 @@ body::-webkit-scrollbar-thumb,
 .search-match.active {
   background-color: #34d399;
   color: #000;
+}
 /* ——— Skeleton Loader ——— */
 @keyframes shimmer {
   0% {
