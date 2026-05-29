@@ -75,21 +75,106 @@
     </header>
 
     <!-- Tabs -->
-    <nav class="dash-tabs">
-      <button class="dash-tab active" data-tab="overview">Overview</button>
-      <button class="dash-tab" data-tab="transcript">Transcript</button>
-      <button class="dash-tab" data-tab="topics">Topics</button>
-      <button class="dash-tab" data-tab="decisions">Decisions</button>
-      <button class="dash-tab" data-tab="actions">Actions</button>
-      <button class="dash-tab" data-tab="people">People</button>
-      <button class="dash-tab" data-tab="timeline">Timeline</button>
-      <button class="dash-tab" data-tab="history">History</button>
+    <nav class="dash-tabs" role="tablist" aria-label="Dashboard Navigation">
+      <button
+        class="dash-tab active"
+        data-tab="overview"
+        role="tab"
+        id="tab-btn-overview"
+        aria-controls="tab-overview"
+        aria-selected="true"
+        tabindex="0"
+      >
+        Overview
+      </button>
+      <button
+        class="dash-tab"
+        data-tab="transcript"
+        role="tab"
+        id="tab-btn-transcript"
+        aria-controls="tab-transcript"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        Transcript
+      </button>
+      <button
+        class="dash-tab"
+        data-tab="topics"
+        role="tab"
+        id="tab-btn-topics"
+        aria-controls="tab-topics"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        Topics
+      </button>
+      <button
+        class="dash-tab"
+        data-tab="decisions"
+        role="tab"
+        id="tab-btn-decisions"
+        aria-controls="tab-decisions"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        Decisions
+      </button>
+      <button
+        class="dash-tab"
+        data-tab="actions"
+        role="tab"
+        id="tab-btn-actions"
+        aria-controls="tab-actions"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        Actions
+      </button>
+      <button
+        class="dash-tab"
+        data-tab="people"
+        role="tab"
+        id="tab-btn-people"
+        aria-controls="tab-people"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        People
+      </button>
+      <button
+        class="dash-tab"
+        data-tab="timeline"
+        role="tab"
+        id="tab-btn-timeline"
+        aria-controls="tab-timeline"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        Timeline
+      </button>
+      <button
+        class="dash-tab"
+        data-tab="history"
+        role="tab"
+        id="tab-btn-history"
+        aria-controls="tab-history"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        History
+      </button>
     </nav>
 
     <!-- Tab Content -->
     <main class="dash-content">
       <!-- OVERVIEW TAB -->
-      <section id="tab-overview" class="tab-panel active">
+      <section
+        id="tab-overview"
+        class="tab-panel active"
+        role="tabpanel"
+        aria-labelledby="tab-btn-overview"
+      >
         <!-- Audio Waveform Visualizer -->
         <div class="dash-card waveform-card" id="waveform-card">
           <div class="dash-card-head">
@@ -330,7 +415,7 @@
       </section>
 
       <!-- TOPICS TAB -->
-      <section id="tab-topics" class="tab-panel">
+      <section id="tab-topics" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-topics">
         <div class="dash-card">
           <div class="dash-card-head">
             <span class="dash-card-icon">
@@ -358,7 +443,12 @@
       </section>
 
       <!-- DECISIONS TAB -->
-      <section id="tab-decisions" class="tab-panel">
+      <section
+        id="tab-decisions"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-btn-decisions"
+      >
         <div class="dash-card">
           <div class="dash-card-head">
             <span class="dash-card-icon">
@@ -387,7 +477,7 @@
       </section>
 
       <!-- ACTIONS TAB -->
-      <section id="tab-actions" class="tab-panel">
+      <section id="tab-actions" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-actions">
         <div class="dash-card">
           <div class="dash-card-head">
             <span class="dash-card-icon">
@@ -422,7 +512,7 @@
       </section>
 
       <!-- PEOPLE TAB -->
-      <section id="tab-people" class="tab-panel">
+      <section id="tab-people" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-people">
         <div class="dash-card">
           <div class="dash-card-head">
             <span class="dash-card-icon">
@@ -477,7 +567,12 @@
       </section>
 
       <!-- TIMELINE TAB -->
-      <section id="tab-timeline" class="tab-panel">
+      <section
+        id="tab-timeline"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-btn-timeline"
+      >
         <div class="dash-card">
           <div class="dash-card-head">
             <span class="dash-card-icon">
@@ -506,7 +601,12 @@
       </section>
 
       <!-- TRANSCRIPT TAB -->
-      <section id="tab-transcript" class="tab-panel">
+      <section
+        id="tab-transcript"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-btn-transcript"
+      >
         <div class="dash-card glow-card">
           <div class="dash-card-head">
             <span class="dash-card-icon">
@@ -539,7 +639,7 @@
           </div>
         </div>
       </section>
-      <section id="tab-history" class="tab-panel">
+      <section id="tab-history" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-history">
         <div class="dash-card">
           <div class="dash-card-head">
             <span class="dash-card-icon">
