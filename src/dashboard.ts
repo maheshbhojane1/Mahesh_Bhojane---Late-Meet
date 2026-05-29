@@ -913,7 +913,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     md += `## Key Insights\n`;
     if (state.keyInsights?.length) {
-      state.keyInsights?.forEach((i) => {
+      state.keyInsights?.filter((i) => i != null).forEach((i) => {
         const text = typeof i === "string" ? i : i.text || "";
         md += `- ${text}\n`;
       });
