@@ -934,10 +934,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     md += `## Key Insights\n`;
     if (state.keyInsights?.length) {
-      state.keyInsights.forEach((i: any) => {
-        const text = typeof i === "string" ? i : i.text;
-        if (text) md += `- ${text}\n`;
-      });
+      state.keyInsights
+        ?.filter((i) => i != null)
+        .forEach((i: any) => {
+          const text = typeof i === "string" ? i : i.text;
+
+          if (text) {
+            md += `- ${text}\n`;
+          }
+        });
       md += "\n";
     } else {
       md += `_No insights available_\n\n`;
