@@ -316,8 +316,21 @@ function snapshot() {
   };
 }
 
+// ---------------------------------------------------------------------------
+// Throttled State Broadcast
+// ---------------------------------------------------------------------------
+
+const BROADCAST_THROTTLE_MS = 500;
+let lastBroadcastTime = 0;
+let pendingBroadcast = false;
+let broadcastTimerHandle: ReturnType<typeof setTimeout> | null = null;
+
 async function broadcastStateUpdate(immediate = false) {
   if (immediate) {
+    if (broadcastTimerHandle !== null) {
+      clearTimeout(broadcastTimerHandle);
+      broadcastTimerHandle = null;
+    }
     pendingBroadcast = false;
     await executeBroadcast();
     return;
@@ -333,7 +346,8 @@ async function broadcastStateUpdate(immediate = false) {
     pendingBroadcast = false;
     await executeBroadcast();
   } else {
-    setTimeout(async () => {
+    broadcastTimerHandle = setTimeout(async () => {
+      broadcastTimerHandle = null;
       if (!pendingBroadcast) return;
       pendingBroadcast = false;
       await executeBroadcast();
@@ -341,12 +355,7 @@ async function broadcastStateUpdate(immediate = false) {
   }
 }
 
-const BROADCAST_THROTTLE_MS = 500;
-let lastBroadcastTime = 0;
-let pendingBroadcast = false;
-
 async function executeBroadcast() {
-  lastBroadcastTime = Date.now();
   const snapshotData = snapshot();
   try {
     // To popup/dashboard — full state
@@ -372,6 +381,8 @@ async function executeBroadcast() {
   } catch {
     /* ignore */
   }
+
+  lastBroadcastTime = Date.now();
 }
 
 async function getApiKey() {
