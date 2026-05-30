@@ -123,7 +123,7 @@ async function decrypt(encoded: string): Promise<string> {
 }
 
 async function encryptCredentials(credentials: ApiCredentials): Promise<ApiCredentials> {
-  if (!derivedKey) return credentials;
+  if (!derivedKey) throw new Error("Encryption key not available — unlock credentials first");
 
   const encrypted: ApiCredentials = {};
   for (const [k, v] of Object.entries(credentials)) {

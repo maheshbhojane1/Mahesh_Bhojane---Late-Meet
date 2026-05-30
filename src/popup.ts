@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ——— Passphrase management ———
   const passphraseInput = document.getElementById("passphrase-input") as HTMLInputElement | null;
   const passphraseStatus = document.getElementById("passphrase-status");
+  let pendingUnlock: Promise<boolean> | null = null;
 
   function updatePassphraseStatus() {
     if (!passphraseStatus) return;
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function handlePassphraseUnlock(): Promise<boolean> {
     if (isUnlocked()) return true;
-    const passphrase = passphraseInput?.value.trim();
+    const passphrase = passphraseInput?.value ?? "";
     if (!passphrase) {
       if (passphraseStatus) passphraseStatus.textContent = "Please enter a passphrase";
       return false;
@@ -49,6 +50,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const success = await unlockCredentials(passphrase);
     if (success) {
       updatePassphraseStatus();
+      const creds = await getApiCredentials();
+      if (creds.openai_api_key || creds.elevenlabs_api_key) {
+        setupView.style.display = "none";
+        mainView.style.display = "block";
+      }
       return true;
     }
     if (passphraseStatus) {
@@ -59,9 +65,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   passphraseInput?.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") handlePassphraseUnlock();
+    if (e.key === "Enter") pendingUnlock = handlePassphraseUnlock();
   });
-  passphraseInput?.addEventListener("blur", () => handlePassphraseUnlock());
+  passphraseInput?.addEventListener("blur", () => {
+    pendingUnlock = handlePassphraseUnlock();
+  });
 
   // ——— Check if API key is configured ———
   const config = await getApiCredentials();
@@ -83,8 +91,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const saveBtn = document.getElementById("save-keys") as HTMLButtonElement;
 
     if (!isUnlocked()) {
-      const unlocked = await handlePassphraseUnlock();
-      if (!unlocked) return;
+      if (pendingUnlock) await pendingUnlock;
+      if (!isUnlocked()) {
+        const unlocked = await handlePassphraseUnlock();
+        if (!unlocked) return;
+      }
     }
 
     if (!apiKey) {

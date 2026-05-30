@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ——— Passphrase management ———
   const passphraseInput = document.getElementById("passphrase-input") as HTMLInputElement | null;
   const passphraseStatus = document.getElementById("passphrase-status");
+  let pendingUnlock: Promise<void> | null = null;
 
   function updatePassphraseUI() {
     if (isUnlocked()) {
@@ -181,7 +182,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const passphrase = passphraseInput?.value ?? "";
     if (!passphrase) {
       if (passphraseStatus) {
-        passphraseStatus.style.color = "`#EF4444`";
+        passphraseStatus.style.color = "#EF4444";
         passphraseStatus.textContent = "Please enter a passphrase";
       }
       return;
@@ -206,10 +207,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   passphraseInput?.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      handleUnlock();
+      pendingUnlock = handleUnlock();
     }
   });
-  passphraseInput?.addEventListener("blur", handleUnlock);
+  passphraseInput?.addEventListener("blur", () => {
+    pendingUnlock = handleUnlock();
+  });
 
   updatePassphraseUI();
 
@@ -224,6 +227,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     )?.value.trim();
 
     const originalText = saveBtn.textContent || "Save Settings";
+    if (pendingUnlock) await pendingUnlock;
     if (!isUnlocked()) {
       if (status) {
         status.style.color = "red";
