@@ -181,6 +181,16 @@ It uses **Chrome's native `tabCapture` API** to intercept audio without adding p
   <sub><i>Floating meeting copilot injected cleanly onto Google Meet. Join late -> catch up instantly without adding noisy bots.</i></sub>
 </div>
 
+<details>
+<summary><b>🔌 Extension Loaded in Chrome — Developer Mode Setup</b></summary>
+<br/>
+
+<div align="center">
+  <img src="docs/assets/screenshots/extension-loaded.png" alt="Late Meet loaded in Chrome extensions" width="88%"/>
+  <br/><br/>
+  <sub><i>Unpacked extension successfully loaded under Developer Mode in Chrome Extensions.</i></sub>
+</div>
+
 </details>
 
 <details>
