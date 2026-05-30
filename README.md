@@ -899,7 +899,7 @@ in the Software without restriction...
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0a1a,30:16213e,60:1a1a3e,100:0d0d0d&height=140&section=footer&animation=fadeIn" width="100%" alt="Footer"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&multiline=false&repeat=true&width=600&height=36&lines=Built+for+teams+who+value+focus%2C+privacy%2C+and+speed.+%F0%9F%9A%80;shouri123%2FLate-Meet+·+MIT+License+·+GSSoC+2026" alt="Footer typing"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&multiline=false&repeat=true&width=600&height=36&lines=Built+for+teams+who+value+focus%2C+privacy%2C+and+speed.+%F0%9F%9A%80;shouri123%2FLate-Meet+%7C+MIT+License+%7C+GSSoC+2026" alt="Footer typing"/>
 
 <br/>
 
