@@ -1278,7 +1278,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ——— Transcript Search ———
   let searchMatches: HTMLElement[] = [];
   let currentMatchIndex = -1;
-  let searchDebounceTimer: number | null = null;
+  let searchDebounceTimer: ReturnType<typeof globalThis.setTimeout> | null = null;
 
   function resetTranscriptSearchState(): void {
     searchMatches = [];
@@ -1492,10 +1492,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   searchInput?.addEventListener("input", () => {
     if (searchDebounceTimer) {
-      window.clearTimeout(searchDebounceTimer);
+      globalThis.clearTimeout(searchDebounceTimer);
     }
 
-    searchDebounceTimer = window.setTimeout(() => {
+    searchDebounceTimer = globalThis.setTimeout(() => {
       executeTranscriptSearch(false);
     }, 150);
   });
@@ -1532,7 +1532,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     event.preventDefault();
     transcriptTab?.click();
 
-    window.setTimeout(() => {
+    globalThis.setTimeout(() => {
       searchInput?.focus();
       searchInput?.select();
     }, 0);
