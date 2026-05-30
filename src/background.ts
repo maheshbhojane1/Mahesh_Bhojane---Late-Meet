@@ -1155,10 +1155,12 @@ async function stopAudioCapture(reason = "Stopped") {
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   if (changeInfo.status !== "complete" || !tab.url) return;
   try {
-    const parsed = new URL(tab.url);
-    if (parsed.hostname !== "meet.google.com") return;
-    const pathMatch = /^\/([a-z-]+)/.exec(parsed.pathname);
+    const parsedUrl = new URL(tab.url);
+    if (parsedUrl.hostname !== "meet.google.com") return;
+
+    const pathMatch = /^\/([a-z-]+)/.exec(parsedUrl.pathname);
     const meetingId = pathMatch ? pathMatch[1] : null;
+
     if (meetingId && meetingId !== "new") {
       if (!state.isActive) {
         resetState();
@@ -1180,9 +1182,9 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
   try {
     const tab = await chrome.tabs.get(activeInfo.tabId);
     if (!tab.url) return;
-    const parsed = new URL(tab.url);
-    if (parsed.hostname !== "meet.google.com") return;
-    const pathMatch = /^\/([a-z-]+)/.exec(parsed.pathname);
+    const parsedUrl = new URL(tab.url);
+    if (parsedUrl.hostname !== "meet.google.com") return;
+    const pathMatch = /^\/([a-z-]+)/.exec(parsedUrl.pathname);
     const meetingId = pathMatch ? pathMatch[1] : null;
     if (meetingId && meetingId !== "new" && !state.isActive) {
       state.meetingId = meetingId;
