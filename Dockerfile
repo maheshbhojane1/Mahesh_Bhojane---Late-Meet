@@ -8,7 +8,7 @@
 # This container is for CI/CD and reproducible builds only.
 # Late-Meet is a Chrome Extension — it does not run as a server.
 
-FROM node:18-alpine@sha256:c8511739c9f2858b97d25e0be951f28b7e6de59012353e6b7d2bf64a2754d924 AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
@@ -18,7 +18,7 @@ COPY . .
 RUN npm run build
 
 # Output stage — minimal image containing only the built extension
-FROM alpine:3.19 AS output
+FROM node:20-alpine AS output
 WORKDIR /app
 COPY --from=builder /app/dist ./dist
 
