@@ -1463,7 +1463,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       console.log("[LateMeet][offscreen]", message.message);
     }
     sendResponse({ success: true });
-    return true;
+    return false;
   }
 
   (async () => {
