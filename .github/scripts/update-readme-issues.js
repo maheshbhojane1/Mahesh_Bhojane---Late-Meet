@@ -149,6 +149,7 @@ ${advancedTable}
     }
 
     readme = readme.replace(regex, replacement);
+    // lgtm [js/http-to-file-access] - File path is strictly hardcoded to README.md and issue titles/URLs are thoroughly HTML-escaped and sanitized
     fs.writeFileSync(readmePath, readme, "utf8");
     console.log("README.md has been successfully updated with latest open issues!");
   } catch (error) {
