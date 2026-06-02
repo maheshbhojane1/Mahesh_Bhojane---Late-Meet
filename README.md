@@ -636,7 +636,6 @@ git push origin feature/your-feature-name
 | :---: | :--- | :--- |
 | [#402](https://github.com/shouri123/Late-Meet/issues/402) | \[FEATURE\] Handle IndexedDB Connection Cleanup During Database Upgrades | General |
 | [#378](https://github.com/shouri123/Late-Meet/issues/378) | \[FEATURE\] Add storage usage insights and session cleanup tools | General |
-| [#104](https://github.com/shouri123/Late-Meet/issues/104) | \[FEAT\]: Show live recording duration timer in the popup UI | General |
 
 
 #### 🟡 Intermediate — `level-2`
@@ -663,17 +662,6 @@ git push origin feature/your-feature-name
 | [#354](https://github.com/shouri123/Late-Meet/issues/354) | \[PERF\] \`offscreen.ts\` sends 20 \`chrome.runtime.sendMessage\` per second for waveform data — unnecessary service worker wake-ups and rejected messages | General |
 | [#353](https://github.com/shouri123/Late-Meet/issues/353) | \[BUG\] \`storageDashboard.ts\` uses native \`confirm()\` dialog for delete — inconsistent with custom modal UX pattern | General |
 | [#352](https://github.com/shouri123/Late-Meet/issues/352) | 📋 Issue 1: Individual Copy-to-Clipboard Buttons for Action Items and Decisions | General |
-| [#350](https://github.com/shouri123/Late-Meet/issues/350) | \[BUG\] Dashboard capture ignores denied microphone permission and still requests mic in offscreen document | General |
-| [#346](https://github.com/shouri123/Late-Meet/issues/346) | \[BUG\] Unscoped participant updates from background Meet tabs can leak late-joiner summaries into the wrong meeting chat | General |
-| [#289](https://github.com/shouri123/Late-Meet/issues/289) | \[BUG\]persistMeetingSession silently discards transcript updates after MV3 service worker restart — duplicate ID guard causes permanent data loss | General |
-| [#238](https://github.com/shouri123/Late-Meet/issues/238) | \[Security\] \`credentials.ts\` stores API keys in plaintext in chrome.storage.local | General |
-| [#236](https://github.com/shouri123/Late-Meet/issues/236) | \[Bug\] \`sessionStorage.ts\` does not handle \`chrome.storage\` quota exceeded errors | General |
-| [#212](https://github.com/shouri123/Late-Meet/issues/212) | UI/UX Feature: Implement a Professional Empty States Design System for Dashboard | General |
-| [#207](https://github.com/shouri123/Late-Meet/issues/207) | Feature/UX: Add Delete Functionality and Confirmation Modal for Action Items | General |
-| [#200](https://github.com/shouri123/Late-Meet/issues/200) | \[FEATURE\]  Make dashboard insight sections collapsibl | General |
-| [#198](https://github.com/shouri123/Late-Meet/issues/198) | \[FEAT\]: Add one-click copy summary button in side panel | General |
-| [#138](https://github.com/shouri123/Late-Meet/issues/138) | Feature: Implement One-Click Export to Markdown and PDF for Meeting Summaries & Transcripts | General |
-| [#112](https://github.com/shouri123/Late-Meet/issues/112) | \[SEC\]: Implement API key rotation reminders and age tracking | General |
 
 
 #### 🔴 Advanced — `level-3`
@@ -687,9 +675,6 @@ git push origin feature/your-feature-name
 | [#393](https://github.com/shouri123/Late-Meet/issues/393) | \[Performance\] \`audioChunkQueue.ts\` processes audio chunks synchronously blocking the main thread | General |
 | [#392](https://github.com/shouri123/Late-Meet/issues/392) | \[Security\] Meeting transcription data sent to external API without transport encryption validation | General |
 | [#356](https://github.com/shouri123/Late-Meet/issues/356) | Graceful Error Handling and Actionable UX for Invalid/Expired API Keys | General |
-| [#346](https://github.com/shouri123/Late-Meet/issues/346) | \[BUG\] Unscoped participant updates from background Meet tabs can leak late-joiner summaries into the wrong meeting chat | General |
-| [#235](https://github.com/shouri123/Late-Meet/issues/235) | \[Performance\] \`speakerAttribution.ts\` does not debounce speaker detection, causing excessive processing | General |
-| [#234](https://github.com/shouri123/Late-Meet/issues/234) | \[Bug\] \`audioProcessing.ts\` does not handle microphone permission denial gracefully | General |
 
 
 </div>
