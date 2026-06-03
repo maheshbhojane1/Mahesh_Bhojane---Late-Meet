@@ -635,9 +635,6 @@ git push origin feature/your-feature-name
 | # | Title | Skills |
 | :---: | :--- | :--- |
 | [#378](https://github.com/shouri123/Late-Meet/issues/378) | \[FEATURE\] Add storage usage insights and session cleanup tools | General |
-| [#104](https://github.com/shouri123/Late-Meet/issues/104) | \[FEAT\]: Show live recording duration timer in the popup UI | General |
-| [#98](https://github.com/shouri123/Late-Meet/issues/98) | Chore: Add \`.editorconfig\` to maintain consistent coding styles | General |
-| [#73](https://github.com/shouri123/Late-Meet/issues/73) | Bug: Meeting Time Input Allows Invalid or Past Date/Time Selection Without Proper Validation | General |
 
 
 #### 🟡 Intermediate — `level-2`
@@ -662,15 +659,6 @@ git push origin feature/your-feature-name
 | [#289](https://github.com/shouri123/Late-Meet/issues/289) | \[BUG\]persistMeetingSession silently discards transcript updates after MV3 service worker restart — duplicate ID guard causes permanent data loss | General |
 | [#238](https://github.com/shouri123/Late-Meet/issues/238) | \[Security\] \`credentials.ts\` stores API keys in plaintext in chrome.storage.local | General |
 | [#236](https://github.com/shouri123/Late-Meet/issues/236) | \[Bug\] \`sessionStorage.ts\` does not handle \`chrome.storage\` quota exceeded errors | General |
-| [#212](https://github.com/shouri123/Late-Meet/issues/212) | UI/UX Feature: Implement a Professional Empty States Design System for Dashboard | General |
-| [#207](https://github.com/shouri123/Late-Meet/issues/207) | Feature/UX: Add Delete Functionality and Confirmation Modal for Action Items | General |
-| [#200](https://github.com/shouri123/Late-Meet/issues/200) | \[FEATURE\]  Make dashboard insight sections collapsibl | General |
-| [#198](https://github.com/shouri123/Late-Meet/issues/198) | \[FEAT\]: Add one-click copy summary button in side panel | General |
-| [#138](https://github.com/shouri123/Late-Meet/issues/138) | Feature: Implement One-Click Export to Markdown and PDF for Meeting Summaries & Transcripts | General |
-| [#112](https://github.com/shouri123/Late-Meet/issues/112) | \[SEC\]: Implement API key rotation reminders and age tracking | General |
-| [#92](https://github.com/shouri123/Late-Meet/issues/92) | \[FEATURE\] Interactive "Catch Me Up" Query - Ask Questions Against the Live Transcript | General |
-| [#45](https://github.com/shouri123/Late-Meet/issues/45) | \[FEATURE\]: Local API Cost & Token Usage Statistics Tracker Dashboard Widget | General |
-| [#41](https://github.com/shouri123/Late-Meet/issues/41) | \[BUG\]: Asynchronous Onboarding Key Validation with UX Shaking Feedback | General |
 
 
 #### 🔴 Advanced — `level-3`
@@ -686,7 +674,6 @@ git push origin feature/your-feature-name
 | [#356](https://github.com/shouri123/Late-Meet/issues/356) | Graceful Error Handling and Actionable UX for Invalid/Expired API Keys | General |
 | [#235](https://github.com/shouri123/Late-Meet/issues/235) | \[Performance\] \`speakerAttribution.ts\` does not debounce speaker detection, causing excessive processing | General |
 | [#234](https://github.com/shouri123/Late-Meet/issues/234) | \[Bug\] \`audioProcessing.ts\` does not handle microphone permission denial gracefully | General |
-| [#47](https://github.com/shouri123/Late-Meet/issues/47) | \[SECURITY\]: Secure Storage for API Credentials using RAM-Only Session Storage | General |
 
 
 </div>
