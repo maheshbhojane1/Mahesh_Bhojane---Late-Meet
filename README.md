@@ -671,7 +671,6 @@ git push origin feature/your-feature-name
 | [#92](https://github.com/shouri123/Late-Meet/issues/92) | \[FEATURE\] Interactive "Catch Me Up" Query - Ask Questions Against the Live Transcript | General |
 | [#45](https://github.com/shouri123/Late-Meet/issues/45) | \[FEATURE\]: Local API Cost & Token Usage Statistics Tracker Dashboard Widget | General |
 | [#41](https://github.com/shouri123/Late-Meet/issues/41) | \[BUG\]: Asynchronous Onboarding Key Validation with UX Shaking Feedback | General |
-| [#11](https://github.com/shouri123/Late-Meet/issues/11) | \[FEATURE\] Meeting Copilot Enhancements (Templates, Search, History, Shortcuts, Multi-language) | General |
 
 
 #### 🔴 Advanced — `level-3`
