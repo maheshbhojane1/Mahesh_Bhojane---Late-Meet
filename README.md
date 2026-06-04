@@ -632,10 +632,7 @@ git push origin feature/your-feature-name
 
 #### 🟢 Beginner — `level-1`
 
-| # | Title | Skills |
-| :---: | :--- | :--- |
-| [#378](https://github.com/shouri123/Late-Meet/issues/378) | \[FEATURE\] Add storage usage insights and session cleanup tools | General |
-
+*No open issues for this level right now! Stay tuned.*
 
 #### 🟡 Intermediate — `level-2`
 
@@ -648,17 +645,6 @@ git push origin feature/your-feature-name
 | [#406](https://github.com/shouri123/Late-Meet/issues/406) | \[Enhancement\] Add export to Markdown format for meeting transcripts | General |
 | [#404](https://github.com/shouri123/Late-Meet/issues/404) | \[Bug\] Meeting transcript continues recording after tab is navigated away from Google Meet | General |
 | [#401](https://github.com/shouri123/Late-Meet/issues/401) | \[FEATURE\] Strengthen \`asStoredSession()\` Runtime Validation | General |
-| [#395](https://github.com/shouri123/Late-Meet/issues/395) | \[Bug\] Speaker attribution breaks when participant names contain non-ASCII characters | General |
-| [#394](https://github.com/shouri123/Late-Meet/issues/394) | \[Enhancement\] Add meeting summary export to PDF format | General |
-| [#391](https://github.com/shouri123/Late-Meet/issues/391) | \[Bug\] Extension popup closes unexpectedly when switching between Google Meet tabs | General |
-| [#380](https://github.com/shouri123/Late-Meet/issues/380) | \[FEATURE\] Add first-time onboarding and setup wizard | General |
-| [#374](https://github.com/shouri123/Late-Meet/issues/374) | \[FEATURE\] feat: add timestamp-linked transcript references for summaries and action items | General |
-| [#354](https://github.com/shouri123/Late-Meet/issues/354) | \[PERF\] \`offscreen.ts\` sends 20 \`chrome.runtime.sendMessage\` per second for waveform data — unnecessary service worker wake-ups and rejected messages | General |
-| [#352](https://github.com/shouri123/Late-Meet/issues/352) | 📋 Issue 1: Individual Copy-to-Clipboard Buttons for Action Items and Decisions | General |
-| [#350](https://github.com/shouri123/Late-Meet/issues/350) | \[BUG\] Dashboard capture ignores denied microphone permission and still requests mic in offscreen document | General |
-| [#289](https://github.com/shouri123/Late-Meet/issues/289) | \[BUG\]persistMeetingSession silently discards transcript updates after MV3 service worker restart — duplicate ID guard causes permanent data loss | General |
-| [#238](https://github.com/shouri123/Late-Meet/issues/238) | \[Security\] \`credentials.ts\` stores API keys in plaintext in chrome.storage.local | General |
-| [#236](https://github.com/shouri123/Late-Meet/issues/236) | \[Bug\] \`sessionStorage.ts\` does not handle \`chrome.storage\` quota exceeded errors | General |
 
 
 #### 🔴 Advanced — `level-3`
@@ -669,11 +655,6 @@ git push origin feature/your-feature-name
 | [#408](https://github.com/shouri123/Late-Meet/issues/408) | \[Security\] No integrity validation on meeting data loaded from storage | General |
 | [#405](https://github.com/shouri123/Late-Meet/issues/405) | \[Performance\] Dashboard renders all past meeting summaries at once without virtualization | General |
 | [#403](https://github.com/shouri123/Late-Meet/issues/403) | \[Security\] Extension stores OpenAI API key in sync storage accessible across devices | General |
-| [#393](https://github.com/shouri123/Late-Meet/issues/393) | \[Performance\] \`audioChunkQueue.ts\` processes audio chunks synchronously blocking the main thread | General |
-| [#392](https://github.com/shouri123/Late-Meet/issues/392) | \[Security\] Meeting transcription data sent to external API without transport encryption validation | General |
-| [#356](https://github.com/shouri123/Late-Meet/issues/356) | Graceful Error Handling and Actionable UX for Invalid/Expired API Keys | General |
-| [#235](https://github.com/shouri123/Late-Meet/issues/235) | \[Performance\] \`speakerAttribution.ts\` does not debounce speaker detection, causing excessive processing | General |
-| [#234](https://github.com/shouri123/Late-Meet/issues/234) | \[Bug\] \`audioProcessing.ts\` does not handle microphone permission denial gracefully | General |
 
 
 </div>
