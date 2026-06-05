@@ -15,6 +15,9 @@ let isStopping = false;
 let isDrainingQueue = false;
 
 const VAD_SAMPLE_MS = 250;
+// Increased from 50ms (20x/sec) to 100ms (10x/sec)
+// to reduce unnecessary service worker wake-ups
+// and chrome.runtime.sendMessage calls
 const WAVEFORM_INTERVAL_MS = 100;
 const WAVEFORM_BUCKETS = 32;
 const WAVEFORM_GAIN = 6;
