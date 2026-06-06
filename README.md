@@ -636,18 +636,11 @@ git push origin feature/your-feature-name
 
 #### 🟡 Intermediate — `level-2`
 
-| # | Title | Skills |
-| :---: | :--- | :--- |
-| [#412](https://github.com/shouri123/Late-Meet/issues/412) | \[Enhancement\] Add support for Google Meet breakout room transcription | General |
-| [#410](https://github.com/shouri123/Late-Meet/issues/410) | \[Bug\] \`background.ts\` service worker fails to restart after Chrome updates extension | General |
-
+*No open issues for this level right now! Stay tuned.*
 
 #### 🔴 Advanced — `level-3`
 
-| # | Title | Skills |
-| :---: | :--- | :--- |
-| [#411](https://github.com/shouri123/Late-Meet/issues/411) | \[Performance\] \`speakerAttribution.ts\` allocates new arrays on every audio frame | General |
-
+*No open issues for this level right now! Stay tuned.*
 
 </div>
 <!-- END_ISSUE_TABLES -->
