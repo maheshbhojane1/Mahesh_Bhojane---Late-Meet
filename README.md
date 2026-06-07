@@ -643,7 +643,10 @@ git push origin feature/your-feature-name
 
 #### 🔴 Advanced — `level-3`
 
-*No open issues for this level right now! Stay tuned.*
+| # | Title | Skills |
+| :---: | :--- | :--- |
+| [#568](https://github.com/shouri123/Late-Meet/issues/568) | \[UI Enhancement\] Add focus-visible style and explicit tab index to the floating "Start Copilot" button | General |
+
 
 </div>
 <!-- END_ISSUE_TABLES -->
