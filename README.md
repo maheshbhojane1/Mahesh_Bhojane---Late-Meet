@@ -632,20 +632,70 @@ git push origin feature/your-feature-name
 
 #### 🟢 Beginner — `level-1`
 
-*No open issues for this level right now! Stay tuned.*
+| # | Title | Skills |
+| :---: | :--- | :--- |
+| [#671](https://github.com/shouri123/Late-Meet/issues/671) | docs: Generate inline JSDoc documentation for all utility functions in src/utils | General |
+| [#667](https://github.com/shouri123/Late-Meet/issues/667) | docs: Add a comprehensive developer setup guide and contributing guidelines | General |
+| [#666](https://github.com/shouri123/Late-Meet/issues/666) | refactor: Consolidate duplicate getSettings functions in options and dashboard | General |
+| [#665](https://github.com/shouri123/Late-Meet/issues/665) | refactor: Migrate remaining JavaScript prompt configurations to TypeScript | General |
+| [#664](https://github.com/shouri123/Late-Meet/issues/664) | test: Add unit test coverage reporting to GitHub Actions build checks | General |
+| [#663](https://github.com/shouri123/Late-Meet/issues/663) | test: Setup GitHub Actions workflow to run semantic PR title linter | General |
+| [#661](https://github.com/shouri123/Late-Meet/issues/661) | feat: Add confirmation dialog popup before clearing all local data | General |
+| [#660](https://github.com/shouri123/Late-Meet/issues/660) | docs: Document extension permissions audit and privacy policy guidelines | General |
+| [#655](https://github.com/shouri123/Late-Meet/issues/655) | feat: Implement secure vault passphrase requirements validation on onboarding | General |
+| [#651](https://github.com/shouri123/Late-Meet/issues/651) | style: Add micro-animations (pulse, slide-in) to recording status indicators | General |
+| [#650](https://github.com/shouri123/Late-Meet/issues/650) | feat: Add a 'Select All' checkbox for bulk actions in storage dashboard | General |
+| [#649](https://github.com/shouri123/Late-Meet/issues/649) | feat: Add copy-to-clipboard buttons with toast feedbacks for transcript segments | General |
+| [#647](https://github.com/shouri123/Late-Meet/issues/647) | style: Modernize settings options page with CSS grid and hover transitions | General |
+| [#646](https://github.com/shouri123/Late-Meet/issues/646) | feat: Implement interactive tooltip tour for first-time onboarding flow | General |
+| [#644](https://github.com/shouri123/Late-Meet/issues/644) | feat: Support export of meeting sessions as CSV spreadsheet | General |
+| [#642](https://github.com/shouri123/Late-Meet/issues/642) | feat: Add configurable summarization interval setting (e.g. 5, 10, 15 minutes) | General |
+| [#641](https://github.com/shouri123/Late-Meet/issues/641) | docs: Add prompt engineering guide and templates for meeting summaries | General |
+| [#638](https://github.com/shouri123/Late-Meet/issues/638) | feat: Support model selection (GPT-4o, GPT-4o-mini, GPT-3.5-turbo) in settings | General |
+| [#634](https://github.com/shouri123/Late-Meet/issues/634) | feat: Implement transcript language selection dropdown (Spanish, French, German, etc.) | General |
+| [#628](https://github.com/shouri123/Late-Meet/issues/628) | docs: Document offscreen document architecture and audio capture flow | General |
+
 
 #### 🟡 Intermediate — `level-2`
 
 | # | Title | Skills |
 | :---: | :--- | :--- |
-| [#573](https://github.com/shouri123/Late-Meet/issues/573) | \[Bug\] Add Stress Tests for High-Volume Audio Chunk Processing | General |
+| [#672](https://github.com/shouri123/Late-Meet/issues/672) | test: Add stress tests for high-volume audio chunk processing under load | General |
+| [#670](https://github.com/shouri123/Late-Meet/issues/670) | refactor: Define strict TypeScript interfaces for all message port communication | General |
+| [#669](https://github.com/shouri123/Late-Meet/issues/669) | feat: Add bundle size budget checker action to prevent dependency bloat | General |
+| [#668](https://github.com/shouri123/Late-Meet/issues/668) | test: Write integration tests for chrome.storage.session state recovery | General |
+| [#659](https://github.com/shouri123/Late-Meet/issues/659) | test: Add fuzz tests for input sanitization and script injection vectors | General |
+| [#658](https://github.com/shouri123/Late-Meet/issues/658) | fix: Guard against prototype pollution in state hydration of storage payloads | General |
+| [#657](https://github.com/shouri123/Late-Meet/issues/657) | fix: Prevent HTML injection and XSS by sanitizing participant names before rendering | General |
+| [#653](https://github.com/shouri123/Late-Meet/issues/653) | feat: Implement strict Content Security Policy (CSP) headers in manifest | General |
+| [#652](https://github.com/shouri123/Late-Meet/issues/652) | feat: Custom accent color picker in options page using color palette grid | General |
+| [#648](https://github.com/shouri123/Late-Meet/issues/648) | style: Implement responsive sidebar layout for dashboard panel | General |
+| [#645](https://github.com/shouri123/Late-Meet/issues/645) | feat: Support export of meeting sessions as PDF with clean styling template | General |
+| [#640](https://github.com/shouri123/Late-Meet/issues/640) | test: Add mock API integration tests for transcript refinement pipeline | General |
+| [#639](https://github.com/shouri123/Late-Meet/issues/639) | feat: Implement structured JSON mode output for transcript refinements | General |
+| [#637](https://github.com/shouri123/Late-Meet/issues/637) | fix: Handle token limit warnings and implement automatic prompt truncation | General |
+| [#636](https://github.com/shouri123/Late-Meet/issues/636) | feat: Implement vocabulary customization (custom names, keywords) for OpenAI Whisper | General |
+| [#633](https://github.com/shouri123/Late-Meet/issues/633) | feat: Support custom system prompts for summary and action-item generation | General |
+| [#630](https://github.com/shouri123/Late-Meet/issues/630) | fix: Handle audio capture track end events dynamically by resetting recorder | General |
+| [#629](https://github.com/shouri123/Late-Meet/issues/629) | feat: Add configurable VAD (Voice Activity Detection) frame size setting | General |
+| [#627](https://github.com/shouri123/Late-Meet/issues/627) | test: Add mock tests for Web Audio API node connections in offscreen | General |
+| [#626](https://github.com/shouri123/Late-Meet/issues/626) | feat: Add audio channels mapping and stereo-to-mono downmixing in offscreen | General |
+| [#625](https://github.com/shouri123/Late-Meet/issues/625) | fix: Prevent audio track clipping by implementing custom limiter Node | General |
+| [#623](https://github.com/shouri123/Late-Meet/issues/623) | feat: Implement adaptive Web Audio API noise gate for offscreen audio capture | General |
 
 
 #### 🔴 Advanced — `level-3`
 
 | # | Title | Skills |
 | :---: | :--- | :--- |
-| [#568](https://github.com/shouri123/Late-Meet/issues/568) | \[UI Enhancement\] Add focus-visible style and explicit tab index to the floating "Start Copilot" button | General |
+| [#662](https://github.com/shouri123/Late-Meet/issues/662) | feat: Implement secure backup partition file export with signature verification | General |
+| [#656](https://github.com/shouri123/Late-Meet/issues/656) | feat: Obfuscate API key storage inside chrome.storage.local using AES-GCM | General |
+| [#654](https://github.com/shouri123/Late-Meet/issues/654) | feat: Purge plaintext credential keys from RAM cache when inactivity timeout fires | General |
+| [#643](https://github.com/shouri123/Late-Meet/issues/643) | feat: Add animated canvas audio waveform visualizer inside popup during capture | General |
+| [#635](https://github.com/shouri123/Late-Meet/issues/635) | feat: Real-time translation of transcripts into selected language | General |
+| [#632](https://github.com/shouri123/Late-Meet/issues/632) | perf: Optimize Web Audio analyzer frequency analysis to reduce CPU overhead | General |
+| [#631](https://github.com/shouri123/Late-Meet/issues/631) | feat: Implement mute state synchronization between Google Meet DOM and offscreen recorder | General |
+| [#624](https://github.com/shouri123/Late-Meet/issues/624) | feat: Support multiple microphone device selection in onboarding and options | General |
 
 
 </div>
