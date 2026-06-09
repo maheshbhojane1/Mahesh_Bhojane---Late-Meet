@@ -652,7 +652,6 @@ git push origin feature/your-feature-name
 | [#641](https://github.com/shouri123/Late-Meet/issues/641) | docs: Add prompt engineering guide and templates for meeting summaries | General |
 | [#638](https://github.com/shouri123/Late-Meet/issues/638) | feat: Support model selection (GPT-4o, GPT-4o-mini, GPT-3.5-turbo) in settings | General |
 | [#634](https://github.com/shouri123/Late-Meet/issues/634) | feat: Implement transcript language selection dropdown (Spanish, French, German, etc.) | General |
-| [#628](https://github.com/shouri123/Late-Meet/issues/628) | docs: Document offscreen document architecture and audio capture flow | General |
 
 
 #### 🟡 Intermediate — `level-2`
@@ -660,7 +659,6 @@ git push origin feature/your-feature-name
 | # | Title | Skills |
 | :---: | :--- | :--- |
 | [#672](https://github.com/shouri123/Late-Meet/issues/672) | test: Add stress tests for high-volume audio chunk processing under load | General |
-| [#670](https://github.com/shouri123/Late-Meet/issues/670) | refactor: Define strict TypeScript interfaces for all message port communication | General |
 | [#669](https://github.com/shouri123/Late-Meet/issues/669) | feat: Add bundle size budget checker action to prevent dependency bloat | General |
 | [#668](https://github.com/shouri123/Late-Meet/issues/668) | test: Write integration tests for chrome.storage.session state recovery | General |
 | [#659](https://github.com/shouri123/Late-Meet/issues/659) | test: Add fuzz tests for input sanitization and script injection vectors | General |
@@ -681,7 +679,6 @@ git push origin feature/your-feature-name
 | [#626](https://github.com/shouri123/Late-Meet/issues/626) | feat: Add audio channels mapping and stereo-to-mono downmixing in offscreen | General |
 | [#625](https://github.com/shouri123/Late-Meet/issues/625) | fix: Prevent audio track clipping by implementing custom limiter Node | General |
 | [#623](https://github.com/shouri123/Late-Meet/issues/623) | feat: Implement adaptive Web Audio API noise gate for offscreen audio capture | General |
-| [#526](https://github.com/shouri123/Late-Meet/issues/526) | \[BUG\] Options page blocks non-secret settings saves when credential storage is locked | General |
 
 
 #### 🔴 Advanced — `level-3`
@@ -696,7 +693,6 @@ git push origin feature/your-feature-name
 | [#631](https://github.com/shouri123/Late-Meet/issues/631) | feat: Implement mute state synchronization between Google Meet DOM and offscreen recorder | General |
 | [#624](https://github.com/shouri123/Late-Meet/issues/624) | feat: Support multiple microphone device selection in onboarding and options | General |
 | [#610](https://github.com/shouri123/Late-Meet/issues/610) | Race Condition Between stopAudioCapture() and Offscreen Drain Orphans tabCapture Streams + Silently Drops Final Transcript Chunks | General |
-| [#526](https://github.com/shouri123/Late-Meet/issues/526) | \[BUG\] Options page blocks non-secret settings saves when credential storage is locked | General |
 
 
 </div>
