@@ -643,7 +643,6 @@ git push origin feature/your-feature-name
 | [#660](https://github.com/shouri123/Late-Meet/issues/660) | docs: Document extension permissions audit and privacy policy guidelines | General |
 | [#651](https://github.com/shouri123/Late-Meet/issues/651) | style: Add micro-animations (pulse, slide-in) to recording status indicators | General |
 | [#650](https://github.com/shouri123/Late-Meet/issues/650) | feat: Add a 'Select All' checkbox for bulk actions in storage dashboard | General |
-| [#649](https://github.com/shouri123/Late-Meet/issues/649) | feat: Add copy-to-clipboard buttons with toast feedbacks for transcript segments | General |
 | [#647](https://github.com/shouri123/Late-Meet/issues/647) | style: Modernize settings options page with CSS grid and hover transitions | General |
 | [#646](https://github.com/shouri123/Late-Meet/issues/646) | feat: Implement interactive tooltip tour for first-time onboarding flow | General |
 | [#644](https://github.com/shouri123/Late-Meet/issues/644) | feat: Support export of meeting sessions as CSV spreadsheet | General |
@@ -665,7 +664,6 @@ git push origin feature/your-feature-name
 | [#640](https://github.com/shouri123/Late-Meet/issues/640) | test: Add mock API integration tests for transcript refinement pipeline | General |
 | [#639](https://github.com/shouri123/Late-Meet/issues/639) | feat: Implement structured JSON mode output for transcript refinements | General |
 | [#637](https://github.com/shouri123/Late-Meet/issues/637) | fix: Handle token limit warnings and implement automatic prompt truncation | General |
-| [#636](https://github.com/shouri123/Late-Meet/issues/636) | feat: Implement vocabulary customization (custom names, keywords) for OpenAI Whisper | General |
 | [#633](https://github.com/shouri123/Late-Meet/issues/633) | feat: Support custom system prompts for summary and action-item generation | General |
 | [#630](https://github.com/shouri123/Late-Meet/issues/630) | fix: Handle audio capture track end events dynamically by resetting recorder | General |
 | [#629](https://github.com/shouri123/Late-Meet/issues/629) | feat: Add configurable VAD (Voice Activity Detection) frame size setting | General |
@@ -673,7 +671,6 @@ git push origin feature/your-feature-name
 | [#626](https://github.com/shouri123/Late-Meet/issues/626) | feat: Add audio channels mapping and stereo-to-mono downmixing in offscreen | General |
 | [#625](https://github.com/shouri123/Late-Meet/issues/625) | fix: Prevent audio track clipping by implementing custom limiter Node | General |
 | [#623](https://github.com/shouri123/Late-Meet/issues/623) | feat: Implement adaptive Web Audio API noise gate for offscreen audio capture | General |
-| [#526](https://github.com/shouri123/Late-Meet/issues/526) | \[BUG\] Options page blocks non-secret settings saves when credential storage is locked | General |
 
 
 #### 🔴 Advanced — `level-3`
@@ -685,7 +682,6 @@ git push origin feature/your-feature-name
 | [#654](https://github.com/shouri123/Late-Meet/issues/654) | feat: Purge plaintext credential keys from RAM cache when inactivity timeout fires | General |
 | [#643](https://github.com/shouri123/Late-Meet/issues/643) | feat: Add animated canvas audio waveform visualizer inside popup during capture | General |
 | [#610](https://github.com/shouri123/Late-Meet/issues/610) | Race Condition Between stopAudioCapture() and Offscreen Drain Orphans tabCapture Streams + Silently Drops Final Transcript Chunks | General |
-| [#526](https://github.com/shouri123/Late-Meet/issues/526) | \[BUG\] Options page blocks non-secret settings saves when credential storage is locked | General |
 
 
 </div>
