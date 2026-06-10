@@ -634,7 +634,6 @@ git push origin feature/your-feature-name
 
 | # | Title | Skills |
 | :---: | :--- | :--- |
-| [#671](https://github.com/shouri123/Late-Meet/issues/671) | docs: Generate inline JSDoc documentation for all utility functions in src/utils | General |
 | [#667](https://github.com/shouri123/Late-Meet/issues/667) | docs: Add a comprehensive developer setup guide and contributing guidelines | General |
 | [#665](https://github.com/shouri123/Late-Meet/issues/665) | refactor: Migrate remaining JavaScript prompt configurations to TypeScript | General |
 | [#664](https://github.com/shouri123/Late-Meet/issues/664) | test: Add unit test coverage reporting to GitHub Actions build checks | General |
