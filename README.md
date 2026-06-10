@@ -642,7 +642,6 @@ git push origin feature/your-feature-name
 | [#660](https://github.com/shouri123/Late-Meet/issues/660) | docs: Document extension permissions audit and privacy policy guidelines | General |
 | [#651](https://github.com/shouri123/Late-Meet/issues/651) | style: Add micro-animations (pulse, slide-in) to recording status indicators | General |
 | [#650](https://github.com/shouri123/Late-Meet/issues/650) | feat: Add a 'Select All' checkbox for bulk actions in storage dashboard | General |
-| [#647](https://github.com/shouri123/Late-Meet/issues/647) | style: Modernize settings options page with CSS grid and hover transitions | General |
 | [#646](https://github.com/shouri123/Late-Meet/issues/646) | feat: Implement interactive tooltip tour for first-time onboarding flow | General |
 | [#644](https://github.com/shouri123/Late-Meet/issues/644) | feat: Support export of meeting sessions as CSV spreadsheet | General |
 | [#642](https://github.com/shouri123/Late-Meet/issues/642) | feat: Add configurable summarization interval setting (e.g. 5, 10, 15 minutes) | General |
