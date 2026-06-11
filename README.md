@@ -636,7 +636,6 @@ git push origin feature/your-feature-name
 | :---: | :--- | :--- |
 | [#667](https://github.com/shouri123/Late-Meet/issues/667) | docs: Add a comprehensive developer setup guide and contributing guidelines | General |
 | [#665](https://github.com/shouri123/Late-Meet/issues/665) | refactor: Migrate remaining JavaScript prompt configurations to TypeScript | General |
-| [#664](https://github.com/shouri123/Late-Meet/issues/664) | test: Add unit test coverage reporting to GitHub Actions build checks | General |
 | [#663](https://github.com/shouri123/Late-Meet/issues/663) | test: Setup GitHub Actions workflow to run semantic PR title linter | General |
 | [#661](https://github.com/shouri123/Late-Meet/issues/661) | feat: Add confirmation dialog popup before clearing all local data | General |
 | [#660](https://github.com/shouri123/Late-Meet/issues/660) | docs: Document extension permissions audit and privacy policy guidelines | General |
@@ -665,7 +664,6 @@ git push origin feature/your-feature-name
 | [#633](https://github.com/shouri123/Late-Meet/issues/633) | feat: Support custom system prompts for summary and action-item generation | General |
 | [#630](https://github.com/shouri123/Late-Meet/issues/630) | fix: Handle audio capture track end events dynamically by resetting recorder | General |
 | [#629](https://github.com/shouri123/Late-Meet/issues/629) | feat: Add configurable VAD (Voice Activity Detection) frame size setting | General |
-| [#627](https://github.com/shouri123/Late-Meet/issues/627) | test: Add mock tests for Web Audio API node connections in offscreen | General |
 | [#626](https://github.com/shouri123/Late-Meet/issues/626) | feat: Add audio channels mapping and stereo-to-mono downmixing in offscreen | General |
 | [#625](https://github.com/shouri123/Late-Meet/issues/625) | fix: Prevent audio track clipping by implementing custom limiter Node | General |
 | [#623](https://github.com/shouri123/Late-Meet/issues/623) | feat: Implement adaptive Web Audio API noise gate for offscreen audio capture | General |
