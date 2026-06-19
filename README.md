@@ -645,6 +645,7 @@ git push origin feature/your-feature-name
 | # | Title | Skills |
 | :---: | :--- | :--- |
 | [#657](https://github.com/shouri123/Late-Meet/issues/657) | fix: Prevent HTML injection and XSS by sanitizing participant names before rendering | General |
+| [#653](https://github.com/shouri123/Late-Meet/issues/653) | feat: Implement strict Content Security Policy (CSP) headers in manifest | General |
 
 
 #### 🔴 Advanced — `level-3`
@@ -652,6 +653,7 @@ git push origin feature/your-feature-name
 | # | Title | Skills |
 | :---: | :--- | :--- |
 | [#768](https://github.com/shouri123/Late-Meet/issues/768) | Accessibility Features for Users with Visual, Hearing, and Speech Impairments | General |
+| [#654](https://github.com/shouri123/Late-Meet/issues/654) | feat: Purge plaintext credential keys from RAM cache when inactivity timeout fires | General |
 
 
 </div>
