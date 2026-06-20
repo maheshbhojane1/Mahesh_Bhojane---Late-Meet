@@ -642,17 +642,13 @@ git push origin feature/your-feature-name
 
 #### 🟡 Intermediate — `level-2`
 
-| # | Title | Skills |
-| :---: | :--- | :--- |
-| [#657](https://github.com/shouri123/Late-Meet/issues/657) | fix: Prevent HTML injection and XSS by sanitizing participant names before rendering | General |
-
+*No open issues for this level right now! Stay tuned.*
 
 #### 🔴 Advanced — `level-3`
 
 | # | Title | Skills |
 | :---: | :--- | :--- |
 | [#768](https://github.com/shouri123/Late-Meet/issues/768) | Accessibility Features for Users with Visual, Hearing, and Speech Impairments | General |
-| [#654](https://github.com/shouri123/Late-Meet/issues/654) | feat: Purge plaintext credential keys from RAM cache when inactivity timeout fires | General |
 
 
 </div>
