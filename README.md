@@ -638,7 +638,6 @@ git push origin feature/your-feature-name
 | [#665](https://github.com/shouri123/Late-Meet/issues/665) | refactor: Migrate remaining JavaScript prompt configurations to TypeScript | General |
 | [#661](https://github.com/shouri123/Late-Meet/issues/661) | feat: Add confirmation dialog popup before clearing all local data | General |
 | [#660](https://github.com/shouri123/Late-Meet/issues/660) | docs: Document extension permissions audit and privacy policy guidelines | General |
-| [#651](https://github.com/shouri123/Late-Meet/issues/651) | style: Add micro-animations (pulse, slide-in) to recording status indicators | General |
 
 
 #### 🟡 Intermediate — `level-2`
@@ -646,7 +645,6 @@ git push origin feature/your-feature-name
 | # | Title | Skills |
 | :---: | :--- | :--- |
 | [#657](https://github.com/shouri123/Late-Meet/issues/657) | fix: Prevent HTML injection and XSS by sanitizing participant names before rendering | General |
-| [#653](https://github.com/shouri123/Late-Meet/issues/653) | feat: Implement strict Content Security Policy (CSP) headers in manifest | General |
 
 
 #### 🔴 Advanced — `level-3`
